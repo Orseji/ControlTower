@@ -14,3 +14,13 @@ C:\Users\Orgi\Documents\C#Projects\TheControlTower\TheControlTower\obj\Debug\The
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\bin\Debug\TheControlTower.exe.config
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.exe
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.pdb
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\bin\Debug\TheControlTower.exe
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\bin\Debug\TheControlTower.pdb
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.csprojResolveAssemblyReference.cache
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\MainWindow.baml
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\MainWindow.g.cs
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\App.g.cs
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower_MarkupCompile.cache
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.g.resources
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.Properties.Resources.resources
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.csproj.GenerateResource.Cache
