@@ -11,8 +11,36 @@ namespace TheControlTower.planes
     /// </summary>
     class Plane
     {
-        public string FlightCode { get; set; }
-        public string Status { get; set; }
-        public string Time { get; set; }
+        private string flightCode;
+        private string status;
+        private string time;
+
+        public Plane()
+        {
+        }
+        public Plane(string flightCode, string status, string time)
+        {
+            this.flightCode = flightCode;
+            this.status = status;
+            this.time = time;
+        }
+
+        public string FlightCode
+        {
+            get { return flightCode; }
+            set { flightCode = value; }
+        }
+
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        public string Time
+        {
+            get { return time; }
+            set { time = value; }
+        }
     }
 }
