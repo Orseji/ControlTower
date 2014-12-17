@@ -23,13 +23,18 @@ namespace TheControlTower
     {
         public MainWindow()
         {
+            Binding flightCdeBinding = new Binding("flightCode");
             InitializeComponent();
             GridViewColumn gvc = new GridViewColumn();
-            Binding flightCdeBinding = new Binding("flightCode");
-            for (int i = 0; i < 50; i++)
-            {
-                flightDataLst.Items.Add(new Plane { FlightCode = "AFR2122", Status = "On Air", Time = "21" });
-            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            Plane plane = new Plane(flightCode.Text, "sent to runway", DateTime.Now.ToString("hh:mm:ss"));
+            flightDataLst.Items.Add(plane);
+            FlightWindow flghtWndw = new FlightWindow();
+            flghtWndw.Show();
         }
 
     }

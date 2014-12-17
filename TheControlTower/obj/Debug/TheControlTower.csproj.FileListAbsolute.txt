@@ -24,3 +24,5 @@ C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlT
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.g.resources
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.Properties.Resources.resources
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.csproj.GenerateResource.Cache
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\FlightWindow.baml
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\FlightWindow.g.cs
