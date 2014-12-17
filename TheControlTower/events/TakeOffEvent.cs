@@ -8,17 +8,21 @@ using TheControlTower.planes;
 namespace TheControlTower.events
 {
 
-    class TakeOffEvent : EventArgs
+    public class TakeOffEvent : EventArgs
     {
         private string flightCode;
         private string status;
         private string time;
+        public TakeOffEvent()
+        {
+
+        }
 
         public TakeOffEvent(Plane plane)
         {
-            plane.FlightCode = flightCode;
-            plane.Status = status;
-            plane.Time = time;
+             flightCode = plane.FlightCode;
+            status = plane.Status;
+            time = plane.Time;
         }
     }
 }

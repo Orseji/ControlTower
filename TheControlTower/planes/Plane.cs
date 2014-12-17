@@ -9,7 +9,7 @@ namespace TheControlTower.planes
     /// <summary>
     /// Class plane
     /// </summary>
-    class Plane
+    public class Plane
     {
         private string flightCode;
         private string status;

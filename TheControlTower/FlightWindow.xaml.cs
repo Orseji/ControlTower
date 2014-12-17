@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TheControlTower.events;
+using TheControlTower.planes;
 
 namespace TheControlTower
 {
@@ -21,17 +22,24 @@ namespace TheControlTower
     public delegate void TakeOffDelegate(object sender, TakeOffEvent toe);
     public partial class FlightWindow : Window
     {
-        public event TakeOffDelegate TakeOffEvnt;
+        public event TakeOffDelegate takeOff;
         public FlightWindow()
         {
             InitializeComponent();
         }
 
-        public void OnTakeOff(TakeOffEvent takeOffEvent)
+        public void TakeOff()
         {
-            if (TakeOffEvnt != null)
+            Plane takeOffPlane = new Plane("aa", "Take off", DateTime.Now.ToString("hh:mm:ss"));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            TakeOffEvent takeOffs = new TakeOffEvent(new Plane("a", "b", "c"));
+            if (takeOffs != null)
             {
-                TakeOffEvnt(this, takeOffEvent);
+                takeOff(this, takeOffs);
             }
         }
     }

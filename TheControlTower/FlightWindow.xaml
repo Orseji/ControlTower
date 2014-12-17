@@ -3,6 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="FlightWindow" Height="300" Width="300">
     <Grid>
-        <Button>Land flight</Button>
+        <Button Click="Button_Click">Land flight</Button>
     </Grid>
 </Window>

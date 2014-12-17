@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TheControlTower.events;
 using TheControlTower.planes;
 
 namespace TheControlTower
@@ -21,11 +22,13 @@ namespace TheControlTower
     /// </summary>
     public partial class MainWindow : Window
     {
+        private FlightWindow flghtWndw = new FlightWindow();
         public MainWindow()
         {
             Binding flightCdeBinding = new Binding("flightCode");
             InitializeComponent();
             GridViewColumn gvc = new GridViewColumn();
+            flghtWndw.takeOff += OnTakeOff;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -33,8 +36,16 @@ namespace TheControlTower
 
             Plane plane = new Plane(flightCode.Text, "sent to runway", DateTime.Now.ToString("hh:mm:ss"));
             flightDataLst.Items.Add(plane);
-            FlightWindow flghtWndw = new FlightWindow();
             flghtWndw.Show();
+        }
+
+        public void OnTakeOff(object sender, TakeOffEvent tke)
+        {
+            Plane takeOffPlane = new Plane("aa", "Take off", DateTime.Now.ToString("hh:mm:ss"));
+            tke = new TakeOffEvent(
+                new Plane("aa", "Take off", DateTime.Now.ToString("hh:mm:ss"))
+                );
+            flightDataLst.Items.Add(tke);
         }
 
     }
