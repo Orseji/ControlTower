@@ -28,18 +28,18 @@ namespace TheControlTower
             InitializeComponent();
         }
 
-        public void TakeOff()
+        public TakeOffEvent TakeOff()
         {
-            Plane takeOffPlane = new Plane("aa", "Take off", DateTime.Now.ToString("hh:mm:ss"));
+            Plane p = new Plane("f", "Take off", DateTime.Now.ToString("hh:mm:ss"));
+             TakeOffEvent takeOffPlane = new TakeOffEvent(p);
+             return takeOffPlane;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            TakeOffEvent takeOffs = new TakeOffEvent(new Plane("a", "b", "c"));
-            if (takeOffs != null)
+            if (takeOff != null)
             {
-                takeOff(this, takeOffs);
+                takeOff(this, TakeOff());
             }
         }
     }

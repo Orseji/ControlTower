@@ -41,10 +41,6 @@ namespace TheControlTower
 
         public void OnTakeOff(object sender, TakeOffEvent tke)
         {
-            Plane takeOffPlane = new Plane("aa", "Take off", DateTime.Now.ToString("hh:mm:ss"));
-            tke = new TakeOffEvent(
-                new Plane("aa", "Take off", DateTime.Now.ToString("hh:mm:ss"))
-                );
             flightDataLst.Items.Add(tke);
         }
 

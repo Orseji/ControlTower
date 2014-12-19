@@ -20,9 +20,29 @@ namespace TheControlTower.events
 
         public TakeOffEvent(Plane plane)
         {
-             flightCode = plane.FlightCode;
+            flightCode = plane.FlightCode;
             status = plane.Status;
             time = plane.Time;
+        }
+
+        public string FlightCode
+        {
+            get
+            { return flightCode; }
+            set
+            { flightCode = value; }
+        }
+
+        public string Status
+        {
+            get { return status; }
+            set { status = value; }
+        }
+
+        public string Time
+        {
+            get { return time; }
+            set { time = value; }
         }
     }
 }
