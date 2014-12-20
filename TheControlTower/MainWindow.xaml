@@ -4,7 +4,7 @@
         Title="Control Window" Height="350" Width="525">
     <DockPanel LastChildFill="True">
         <WrapPanel Margin="20" DockPanel.Dock="Bottom">
-            <Label>Next Flight</Label>
+            <Label>Next Flight:</Label>
             <TextBox MinWidth="200" x:Name="flightCode"></TextBox>
             <Button Margin="10,0,0,0" Click="Button_Click">Send airplane to runway</Button>
         </WrapPanel>

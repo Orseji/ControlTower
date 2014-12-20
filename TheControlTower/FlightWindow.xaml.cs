@@ -30,7 +30,7 @@ namespace TheControlTower
 
         public TakeOffEvent TakeOff()
         {
-            Plane p = new Plane("f", "Take off", DateTime.Now.ToString("hh:mm:ss"));
+            Plane p = new Plane(this.Title, "Take off", DateTime.Now.ToString("hh:mm:ss"));
              TakeOffEvent takeOffPlane = new TakeOffEvent(p);
              return takeOffPlane;
         }

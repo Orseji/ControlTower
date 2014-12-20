@@ -36,6 +36,7 @@ namespace TheControlTower
 
             Plane plane = new Plane(flightCode.Text, "sent to runway", DateTime.Now.ToString("hh:mm:ss"));
             flightDataLst.Items.Add(plane);
+            flghtWndw.Title = flightCode.Text;
             flghtWndw.Show();
         }
 
