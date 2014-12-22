@@ -30,7 +30,6 @@ namespace TheControlTower
             InitializeComponent();
             PopulateCmbBox();
         }
-
         private void LoadWindow()
         {
            
@@ -41,19 +40,16 @@ namespace TheControlTower
              TakeOffEvent takeOffPlane = new TakeOffEvent(p);
              return takeOffPlane;
         }
-
         public ChangeRouteEvent ChangeRoute()
         {
             Plane p = new Plane(this.Title, "changed route to " + changeRouteCmbBox.SelectedItem.ToString(), DateTime.Now.ToString("hh:mm:ss"));
             ChangeRouteEvent changeRoutePlane = new ChangeRouteEvent(p);
             return changeRoutePlane;
         }
-
         private void Land_Click(object sender, RoutedEventArgs e)
         {
            
         }
-
         private void TakeOff_Click(object sender, RoutedEventArgs e)
         {
             if (takeOff != null)
@@ -61,7 +57,6 @@ namespace TheControlTower
                 takeOff(this, TakeOff());
             }
         }
-
         private void PopulateCmbBox()
         {
             int degrees = 10;
@@ -71,7 +66,6 @@ namespace TheControlTower
                 changeRouteCmbBox.Items.Add(degrees + "°");
             }
         }
-
         private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (changeRoute != null)
