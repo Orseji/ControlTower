@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="convertion\ConvertToImgSource.cs" />
     <Compile Include="events\ChangeRouteEvent.cs" />
     <Compile Include="events\LandEvent.cs" />
     <Compile Include="events\TakeOffEvent.cs" />
@@ -109,16 +110,13 @@
     <None Include="Resources\img1.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1200-upload-blog-d96-american-airlines-b757.jpg" />
+    <None Include="Resources\img3.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AIR-FRANCE.jpg" />
+    <None Include="Resources\img2.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\OE-LNM-Austrian-Airlines-Boeing-737-600_PlanespottersNet_187279.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\No_image_available.jpg" />
+    <None Include="Resources\img4.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
