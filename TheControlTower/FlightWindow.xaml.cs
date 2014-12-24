@@ -21,10 +21,12 @@ namespace TheControlTower
     /// </summary>
     public delegate void TakeOffDelegate(object sender, TakeOffEvent toe);
     public delegate void ChangeRouteDelegate(object sender, ChangeRouteEvent cre);
+    public delegate void LandDelegate(object sender, LandEvent le);
     public partial class FlightWindow : Window
     {
         public event TakeOffDelegate takeOff;
         public event ChangeRouteDelegate changeRoute;
+        public event LandDelegate land;
         public FlightWindow()
         {
             InitializeComponent();
@@ -32,13 +34,28 @@ namespace TheControlTower
         }
         private void LoadWindow()
         {
-           
+
         }
         public TakeOffEvent TakeOff()
         {
-            Plane p = new Plane(this.Title, "Take off", DateTime.Now.ToString("hh:mm:ss"));
-             TakeOffEvent takeOffPlane = new TakeOffEvent(p);
-             return takeOffPlane;
+            Plane p = new Plane(this.Title, "Take Off", DateTime.Now.ToString("hh:mm:ss"));
+            TakeOffEvent takeOffPlane = new TakeOffEvent(p);
+            return takeOffPlane;
+        }
+        public LandEvent Land()
+        {
+            Plane p = new Plane(this.Title, "landed", DateTime.Now.ToString("hh:mm:ss"));
+            LandEvent land = new LandEvent(p);
+            try
+            {
+                land.PlaySound();
+            }
+            catch (NotSupportedException e)
+            {
+                MessageBox.Show("Error: " + e);
+            }
+            this.Close();
+            return land;
         }
         public ChangeRouteEvent ChangeRoute()
         {
@@ -48,7 +65,10 @@ namespace TheControlTower
         }
         private void Land_Click(object sender, RoutedEventArgs e)
         {
-           
+            if (land != null)
+            {
+                land(this, Land());
+            }
         }
         private void TakeOff_Click(object sender, RoutedEventArgs e)
         {

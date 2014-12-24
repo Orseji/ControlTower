@@ -27,8 +27,8 @@ namespace TheControlTower.events
 
         public string FlightCode
         {
-            get{ return flightCode; }
-            set{ flightCode = value; }
+            get { return flightCode; }
+            set { flightCode = value; }
         }
 
         public string Status

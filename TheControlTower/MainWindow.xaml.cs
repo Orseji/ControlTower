@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TheControlTower.events;
 using TheControlTower.planes;
+using TheControlTower.sounds;
 
 namespace TheControlTower
 {
@@ -24,14 +25,13 @@ namespace TheControlTower
     /// </summary>
     public partial class MainWindow : Window
     {
-        private FlightWindow flghtWndw = new FlightWindow();
+        private FlightWindow flghtWndw;
+        PlaySound sound = new PlaySound();
         public MainWindow()
         {
-            Binding flightCdeBinding = new Binding("flightCode");
             InitializeComponent();
+            Binding flightCdeBinding = new Binding("flightCode");
             GridViewColumn gvc = new GridViewColumn();
-            flghtWndw.takeOff += OnTakeOff;
-            flghtWndw.changeRoute += OnChangeRoute;
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -59,6 +59,11 @@ namespace TheControlTower
         {
             flightDataLst.Items.Add(cre);
         }
+
+        public void OnLand(object sender, LandEvent le)
+        {
+            flightDataLst.Items.Add(le);
+        }
         private bool InputValidator(string input)
         {
             bool inputOk;
@@ -72,33 +77,43 @@ namespace TheControlTower
             }
             return inputOk;
         }
+        private void ShowPlaneWindow()
+        {
+            flghtWndw = new FlightWindow();
+            flghtWndw.Title = flightCode.Text;
+            flghtWndw.takeOff += OnTakeOff;
+            flghtWndw.changeRoute += OnChangeRoute;
+            flghtWndw.land += OnLand;
+            flghtWndw.land += sound.OnLand;
+            if (flightCode.Text.Trim().StartsWith("AA"))
+            {
+                flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img1);
+            }
+            else if (flightCode.Text.Trim().StartsWith("AFR"))
+            {
+                flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img2);
+            }
+            else if (flightCode.Text.Trim().StartsWith("OE"))
+            {
+                flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img3);
+            }
+            else
+            {
+                flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img4);
+            }
 
+            flghtWndw.Show();
+        }
         private void ValidateUsersInput()
         {
             if (InputValidator(flightCode.Text))
             {
                 Plane plane = new Plane(flightCode.Text, "sent to runway", DateTime.Now.ToString("hh:mm:ss"));
                 flightDataLst.Items.Add(plane);
-                flghtWndw.Title = flightCode.Text;
-                if (flightCode.Text.Trim().StartsWith("AA"))
-                {
-                    flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img1);
-                }
-                else if (flightCode.Text.Trim().StartsWith("AFR"))
-                {
-                    flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img2);
-                }
-                else if (flightCode.Text.Trim().StartsWith("OE"))
-                {
-                    flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img3);
-                }
-                else
-                {
-                    flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img4);
-                }
-                flghtWndw.Show();
-            }
-            else
+                ShowPlaneWindow();
+                flightCode.Text = string.Empty;
+
+            }else
             {
                 MessageBox.Show("The flight code is required", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 flightCode.Focus();

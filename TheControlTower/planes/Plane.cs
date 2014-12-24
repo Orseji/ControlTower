@@ -43,10 +43,5 @@ namespace TheControlTower.planes
             set { time = value; }
         }
 
-        public override string ToString()
-        {
-            string format = string.Format("{0, 15} {1, 15} {2, 15}", this.flightCode, this.status, this.time);
-            return format;
-        }
     }
 }
