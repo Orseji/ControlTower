@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Namn: Orgi Sejdini
+ * ID: AC8699
+ * Date: 18/12/14
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +11,7 @@ using System.Threading.Tasks;
 namespace TheControlTower.planes
 {
     /// <summary>
-    /// Class plane
+    /// Class plane that is used to change information depending on which events that is fired
     /// </summary>
     public class Plane
     {

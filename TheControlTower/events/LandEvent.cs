@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Namn: Orgi Sejdini
+ * ID: AC8699
+ * Date: 18/12/14
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Media;
@@ -9,6 +13,9 @@ using TheControlTower.planes;
 
 namespace TheControlTower.events
 {
+    /// <summary>
+    /// Class that changes the plane data when it's triggered
+    /// </summary>
     public class LandEvent : EventArgs
     {   
         private string flightCode;
@@ -38,21 +45,6 @@ namespace TheControlTower.events
         {
             get { return time; }
             set { time = value; }
-        }
-
-        public void PlaySound()
-        {
-            try
-            {
-                Uri uri = new Uri(@"pack://application:,,,/Resources/audio1.wav");
-                SoundPlayer mPlayer = new SoundPlayer(@"C:\Users\Orgi\Downloads\audio.wav");
-                mPlayer.Play();
-            }
-            catch (NotSupportedException ex)
-            {
-                throw;
-            }
-            
         }
     }
 }

@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Namn: Orgi Sejdini
+ * ID: AC8699
+ * Date: 18/12/14
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +11,9 @@ using TheControlTower.planes;
 
 namespace TheControlTower.events
 {
+    /// <summary>
+    /// Class that changes the plane data when it's triggered
+    /// </summary>
     public class ChangeRouteEvent : EventArgs
     {
         private string flightCode;

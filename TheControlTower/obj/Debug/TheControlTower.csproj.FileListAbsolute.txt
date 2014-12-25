@@ -16,8 +16,6 @@ C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlT
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.pdb
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\bin\Debug\TheControlTower.exe
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\bin\Debug\TheControlTower.pdb
-C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\MainWindow.baml
-C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\MainWindow.g.cs
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\App.g.cs
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower_MarkupCompile.cache
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.g.resources
@@ -25,3 +23,6 @@ C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlT
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.csproj.GenerateResource.Cache
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\FlightWindow.baml
 C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\FlightWindow.g.cs
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\TheControlTower.csprojResolveAssemblyReference.cache
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\MainWindow.baml
+C:\Users\Orgi\Source\Repos\TheControlTower\TheControlTower\obj\Debug\MainWindow.g.cs

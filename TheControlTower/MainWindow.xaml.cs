@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*Namn: Orgi Sejdini
+ * ID: AC8699
+ * Date: 20/12/14
+ */
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -22,6 +26,7 @@ namespace TheControlTower
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
+    /// It is also the subscriber of the FlightWindow
     /// </summary>
     public partial class MainWindow : Window
     {
@@ -33,12 +38,18 @@ namespace TheControlTower
             Binding flightCdeBinding = new Binding("flightCode");
             GridViewColumn gvc = new GridViewColumn();
         }
+        /// <summary>
+        /// Adds the plane in the list when send plane to runway is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             ValidateUsersInput();
         }
         /// <summary>
         /// Converts the bitmap to imgsource
+        /// This one is taken from google 
         /// </summary>
         /// <param name="source"></param>
         /// <returns></returns>
@@ -49,21 +60,39 @@ namespace TheControlTower
             source.Dispose();
             return wpfBitmap;
         }
-
+        /// <summary>
+        /// Adds takeoff into the list when the button takeoff in FlightWindow is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="tke"></param>
         public void OnTakeOff(object sender, TakeOffEvent tke)
         {
             flightDataLst.Items.Add(tke);
         }
-
+        /// <summary>
+        /// Adds ChangeRoute into the list when the combobox in FlightWindow is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="cre"></param>
         public void OnChangeRoute(object sender, ChangeRouteEvent cre)
         {
             flightDataLst.Items.Add(cre);
         }
-
+        /// <summary>
+        /// Adds landevent into the list when the button land in FlightWindow is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="le"></param>
         public void OnLand(object sender, LandEvent le)
         {
             flightDataLst.Items.Add(le);
         }
+
+        /// <summary>
+        /// Validator that is used for validating if input is made
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         private bool InputValidator(string input)
         {
             bool inputOk;
@@ -77,6 +106,10 @@ namespace TheControlTower
             }
             return inputOk;
         }
+        /// <summary>
+        /// Creates an instance of the publisher, FlightWindow
+        /// an the subscriber subscribes to the events. 
+        /// </summary>
         private void ShowPlaneWindow()
         {
             flghtWndw = new FlightWindow();
@@ -85,15 +118,16 @@ namespace TheControlTower
             flghtWndw.changeRoute += OnChangeRoute;
             flghtWndw.land += OnLand;
             flghtWndw.land += sound.OnLand;
-            if (flightCode.Text.Trim().StartsWith("AA"))
+
+            if (flightCode.Text.Trim().StartsWith("AA", StringComparison.OrdinalIgnoreCase))
             {
                 flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img1);
             }
-            else if (flightCode.Text.Trim().StartsWith("AFR"))
+            else if (flightCode.Text.Trim().StartsWith("AFR", StringComparison.OrdinalIgnoreCase))
             {
                 flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img2);
             }
-            else if (flightCode.Text.Trim().StartsWith("OE"))
+            else if (flightCode.Text.Trim().StartsWith("OE", StringComparison.OrdinalIgnoreCase))
             {
                 flghtWndw.planeImg.Source = ToBitmapSource(Properties.Resources.img3);
             }
@@ -104,6 +138,9 @@ namespace TheControlTower
 
             flghtWndw.Show();
         }
+        /// <summary>
+        /// Validates if the user has made inputs to the textfield. If so creates a plane and adds it in the flightDataLst
+        /// </summary>
         private void ValidateUsersInput()
         {
             if (InputValidator(flightCode.Text))
@@ -113,7 +150,8 @@ namespace TheControlTower
                 ShowPlaneWindow();
                 flightCode.Text = string.Empty;
 
-            }else
+            }
+            else
             {
                 MessageBox.Show("The flight code is required", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 flightCode.Focus();

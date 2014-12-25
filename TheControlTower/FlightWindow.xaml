@@ -5,9 +5,9 @@
         Title="" x:Name="flghtWndw">
     <DockPanel LastChildFill="True">
         <WrapPanel Margin="20" DockPanel.Dock="Bottom">
-            <Button MinWidth="100" MinHeight="30" Click="TakeOff_Click" >TakeOff</Button>
-            <ComboBox MinWidth="200" Margin="10,0,0,0"   x:Name="changeRouteCmbBox" SelectionChanged="OnSelectionChanged"></ComboBox>
-            <Button Margin="10,0,0,0" MinWidth="100" Click="Land_Click">Land</Button>
+            <Button MinWidth="100" MinHeight="30" Click="TakeOff_Click" x:Name="takeoffBtn" >TakeOff</Button>
+            <ComboBox IsEnabled="False" MinWidth="200" Margin="10,0,0,0" x:Name="changeRouteCmbBox" SelectionChanged="OnSelectionChanged"></ComboBox>
+            <Button IsEnabled="False" Margin="10,0,0,0" MinWidth="100" Click="Land_Click" x:Name="landBtn">Land</Button>
         </WrapPanel>
         
             <StackPanel>
